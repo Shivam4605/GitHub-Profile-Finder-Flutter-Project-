@@ -5,9 +5,9 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   Future<ProfileModel> getUser({required String userName}) async {
-    final url = Uri.parse("https://api.github.com/users/$userName");
+    Uri url = Uri.parse("https://api.github.com/users/$userName");
 
-    final response = await http.get(url);
+    http.Response response = await http.get(url);
 
     if (response.statusCode == 200) {
       final body = jsonDecode(response.body);
