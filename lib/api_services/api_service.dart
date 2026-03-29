@@ -11,7 +11,7 @@ class ApiService {
 
     if (response.statusCode == 200) {
       final body = jsonDecode(response.body);
-
+      
       log("API Response: $body");
 
       return ProfileModel.fromJson(body);
