@@ -80,9 +80,9 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   Future<void> openGithubProfile({required String username}) async {
-    final url = Uri.parse("https://github.com/$username");
+    Uri url = Uri.parse("https://github.com/$username");
     try {
-      final launched = await launchUrl(
+      bool launched = await launchUrl(
         url,
         mode: LaunchMode.externalApplication,
       );
